@@ -1,3 +1,4 @@
+import { Profile } from './components/Profile'
 import { BlogPostsContainer, BlogPostsContent } from './styles'
 
 export function Main() {
@@ -5,7 +6,7 @@ export function Main() {
     <div>
       <BlogPostsContainer>
         <BlogPostsContent>
-          <h1>Posts</h1>
+          <Profile />
         </BlogPostsContent>
       </BlogPostsContainer>
     </div>
