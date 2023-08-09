@@ -1,3 +1,5 @@
+import { IssueInfo } from '../components/IssueInfo'
+
 export function IssueDetail() {
-  return <h1>Detalhe da Issue</h1>
+  return <IssueInfo />
 }

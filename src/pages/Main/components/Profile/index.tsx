@@ -6,6 +6,7 @@ import {
   faBuilding,
   faUserGroup,
 } from '@fortawesome/free-solid-svg-icons'
+import { Tag } from '../../../../components/Tag'
 
 export function Profile() {
   return (
@@ -28,18 +29,9 @@ export function Profile() {
           </p>
         </main>
         <footer>
-          <div>
-            <FontAwesomeIcon icon={faGithub} />
-            <span>brenoq</span>
-          </div>
-          <div>
-            <FontAwesomeIcon icon={faBuilding} />
-            <span>DBSeller</span>
-          </div>
-          <div>
-            <FontAwesomeIcon icon={faUserGroup} />
-            <span>32 seguidores</span>
-          </div>
+          <Tag icon={faGithub} content="brenoq" />
+          <Tag icon={faBuilding} content="DBSeller" />
+          <Tag icon={faUserGroup} content="32 seguidores" />
         </footer>
       </InfoContainer>
     </ProfileContainer>
