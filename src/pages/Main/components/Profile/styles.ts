@@ -51,6 +51,12 @@ export const InfoContainer = styled.div`
       color: ${(props) => props.theme.blue};
       font-size: 1.2rem;
       font-weight: 700;
+
+      border-bottom: 1px solid transparent;
+
+      &:hover {
+        border-bottom: 1px solid ${(props) => props.theme.blue};
+      }
     }
   }
 

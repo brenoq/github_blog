@@ -1,6 +1,10 @@
 import { styled } from 'styled-components'
 
-export const TagContainer = styled.div`
+interface typeProps {
+  type: 'profile' | 'issue'
+}
+
+export const TagContainer = styled.div<typeProps>`
   display: flex;
   align-items: center;
   justify-content: center;
@@ -14,7 +18,10 @@ export const TagContainer = styled.div`
   }
 
   span {
-    color: ${(props) => props.theme['base-subtitle']};
+    color: ${(props) =>
+      props.type === 'profile'
+        ? (props) => props.theme['base-subtitle']
+        : (props) => props.theme['base-span']};
 
     font-size: 1.6rem;
     font-weight: 400;

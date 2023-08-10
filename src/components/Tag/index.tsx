@@ -5,11 +5,12 @@ import { TagContainer } from './styles'
 interface TagIcon {
   icon: IconProp
   content: string
+  type: 'profile' | 'issue'
 }
 
-export function Tag({ icon, content }: TagIcon) {
+export function Tag({ icon, content, type }: TagIcon) {
   return (
-    <TagContainer>
+    <TagContainer type={type}>
       <FontAwesomeIcon icon={icon} />
       <span>{content}</span>
     </TagContainer>

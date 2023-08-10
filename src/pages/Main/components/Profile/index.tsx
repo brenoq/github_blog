@@ -29,9 +29,9 @@ export function Profile() {
           </p>
         </main>
         <footer>
-          <Tag icon={faGithub} content="brenoq" />
-          <Tag icon={faBuilding} content="DBSeller" />
-          <Tag icon={faUserGroup} content="32 seguidores" />
+          <Tag icon={faGithub} content="brenoq" type="profile" />
+          <Tag icon={faBuilding} content="DBSeller" type="profile" />
+          <Tag icon={faUserGroup} content="32 seguidores" type="profile" />
         </footer>
       </InfoContainer>
     </ProfileContainer>

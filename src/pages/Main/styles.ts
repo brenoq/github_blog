@@ -18,6 +18,10 @@ export const IssuesContainer = styled.div`
 
   margin-top: 4.8rem;
   margin-bottom: 23.4rem;
+
+  a {
+    text-decoration: none;
+  }
 `
 
 export const IssueCard = styled.div`
@@ -30,7 +34,14 @@ export const IssueCard = styled.div`
   padding: 3.2rem;
 
   border-radius: 1rem;
+  border: 2px solid ${(props) => props.theme['base-post']};
   background: ${(props) => props.theme['base-post']};
+
+  cursor: pointer;
+
+  &:hover {
+    border: 2px solid ${(props) => props.theme['base-label']};
+  }
 
   div {
     display: flex;
@@ -40,7 +51,7 @@ export const IssueCard = styled.div`
     gap: 1.6rem;
 
     h1 {
-      width: 28.3rem;
+      width: 27.9rem;
 
       color: ${(props) => props.theme['base-title']};
       font-size: 2rem;
