@@ -47,7 +47,7 @@ export function IssesProvider({ children }: IssuesProviderProps) {
     const data = response.data.map((issue: Issues) => ({
       number: issue.number,
       title: issue.title,
-      login: issue.user.login,
+      user: issue.user,
       created_at: issue.created_at,
       comments: issue.comments,
       body: issue.body,
