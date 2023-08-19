@@ -2,7 +2,12 @@ import { ReactNode, createContext, useEffect, useState } from 'react'
 import { api } from '../lib/axios'
 
 interface Issues {
-  id: number
+  number: number
+  title: string
+  user: { login: string }
+  created_at: string
+  comments: string
+  body: string
 }
 
 interface User {
@@ -36,8 +41,27 @@ export function IssesProvider({ children }: IssuesProviderProps) {
     setUser({ name, login, company, bio, followers } as User)
   }
 
+  async function fetchIssues() {
+    const response = await api.get('repos/brenoq/github_blog/issues')
+
+    const data = response.data.map((issue: Issues) => ({
+      number: issue.number,
+      title: issue.title,
+      login: issue.user.login,
+      created_at: issue.created_at,
+      comments: issue.comments,
+      body: issue.body,
+    }))
+
+    setIssues(data)
+  }
+
   useEffect(() => {
     fetchUser()
+  }, [])
+
+  useEffect(() => {
+    fetchIssues()
   }, [])
 
   return (

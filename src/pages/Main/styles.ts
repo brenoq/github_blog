@@ -51,12 +51,19 @@ export const IssueCard = styled.div`
     gap: 1.6rem;
 
     h1 {
-      width: 27.9rem;
+      width: 27.5rem;
+      min-height: 6.4rem;
 
       color: ${(props) => props.theme['base-title']};
       font-size: 2rem;
       font-weight: 700;
       line-height: 160%;
+
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 2;
     }
 
     span {
