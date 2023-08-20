@@ -6,7 +6,7 @@ import {
   faChevronLeft,
   faComment,
 } from '@fortawesome/free-solid-svg-icons'
-import { Link } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 import { Tag } from '../../../../components/Tag'
 import { faGithub } from '@fortawesome/free-brands-svg-icons'
 import { formatDistanceToNow } from 'date-fns'
@@ -19,6 +19,8 @@ interface IssuesInfoProps {
 }
 
 export function IssueInfo({ owner, date, comments }: IssuesInfoProps) {
+  const { number } = useParams()
+
   const dateFormatted = formatDistanceToNow(new Date(date), {
     addSuffix: true,
     locale: ptBR,
@@ -32,7 +34,7 @@ export function IssueInfo({ owner, date, comments }: IssuesInfoProps) {
           <span>VOLTAR</span>
         </Link>
         <a
-          href="http://github.com/brenoq/github_blog"
+          href={'http://github.com/brenoq/github_blog/issues/' + number}
           target="_blank"
           rel="noreferrer"
         >
