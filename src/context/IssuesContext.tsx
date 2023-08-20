@@ -21,6 +21,7 @@ interface User {
 interface IssuesContextType {
   issues: Issues[]
   user: User
+  searchIssues: (q: string) => void
 }
 
 export const IssuesContext = createContext({} as IssuesContextType)
@@ -56,16 +57,36 @@ export function IssesProvider({ children }: IssuesProviderProps) {
     setIssues(data)
   }
 
-  useEffect(() => {
-    fetchUser()
-  }, [])
+  async function searchIssues(q: string) {
+    if (q !== '') {
+      const response = await api.get('search/issues', {
+        params: {
+          q: q + `repo:brenoq/github_blog`,
+        },
+      })
+
+      const data = response.data.items.map((issue: Issues) => ({
+        number: issue.number,
+        title: issue.title,
+        user: issue.user,
+        created_at: issue.created_at,
+        comments: issue.comments,
+        body: issue.body,
+      }))
+
+      setIssues(data)
+    } else {
+      fetchIssues()
+    }
+  }
 
   useEffect(() => {
+    fetchUser()
     fetchIssues()
   }, [])
 
   return (
-    <IssuesContext.Provider value={{ issues, user }}>
+    <IssuesContext.Provider value={{ issues, user, searchIssues }}>
       {children}
     </IssuesContext.Provider>
   )
