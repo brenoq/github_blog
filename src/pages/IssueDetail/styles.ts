@@ -1,8 +1,10 @@
 import { styled } from 'styled-components'
 
-export const IssueDetailContainer = styled.div`
-  display: flex;
-  flex-direction: column;
+export const IssueDetailContainer = styled.main`
+  width: 100%;
+  min-width: 144rem;
+
+  margin: 0 auto;
 `
 export const IssueDetailContent = styled.div`
   display: flex;
@@ -11,7 +13,7 @@ export const IssueDetailContent = styled.div`
   justify-content: center;
 
   padding: 4rem 3.2rem;
-  /* gap: 1rem; */
+  margin: 0 auto;
 
   width: 86.4rem;
 

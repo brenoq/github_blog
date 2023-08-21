@@ -7,6 +7,8 @@ export const IssueInfoContainer = styled.div`
   justify-content: center;
 
   margin-top: -9.2rem;
+  margin-left: auto;
+  margin-right: auto;
   padding: 3.2rem;
 
   width: 86.4rem;
