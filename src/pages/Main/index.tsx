@@ -16,32 +16,30 @@ export function Main() {
   const { issues } = useContext(IssuesContext)
 
   return (
-    <div>
-      <BlogPostsContainer>
-        <BlogPostsContent>
-          <Profile />
-          <SearchForm />
+    <BlogPostsContainer>
+      <BlogPostsContent>
+        <Profile />
+        <SearchForm />
 
-          <IssuesContainer>
-            {issues.map((issue) => (
-              <Link key={issue.number} to={`/issue/` + issue.number}>
-                <IssueCard>
-                  <div>
-                    <h1>{issue.title}</h1>
-                    <span>
-                      {formatDistanceToNow(new Date(issue.created_at), {
-                        addSuffix: true,
-                        locale: ptBR,
-                      })}
-                    </span>
-                  </div>
-                  <p>{issue.body.replace(/#/g, '')}</p>
-                </IssueCard>
-              </Link>
-            ))}
-          </IssuesContainer>
-        </BlogPostsContent>
-      </BlogPostsContainer>
-    </div>
+        <IssuesContainer>
+          {issues.map((issue) => (
+            <Link key={issue.number} to={`/issue/` + issue.number}>
+              <IssueCard>
+                <div>
+                  <h1>{issue.title}</h1>
+                  <span>
+                    {formatDistanceToNow(new Date(issue.created_at), {
+                      addSuffix: true,
+                      locale: ptBR,
+                    })}
+                  </span>
+                </div>
+                <p>{issue.body.replace(/#/g, '')}</p>
+              </IssueCard>
+            </Link>
+          ))}
+        </IssuesContainer>
+      </BlogPostsContent>
+    </BlogPostsContainer>
   )
 }

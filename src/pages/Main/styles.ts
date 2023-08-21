@@ -1,15 +1,17 @@
 import { styled } from 'styled-components'
 
 export const BlogPostsContainer = styled.main`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  width: 100%;
+  min-width: 144rem;
+
+  margin: 0 auto;
 `
 
 export const BlogPostsContent = styled.div`
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
 `
 export const IssuesContainer = styled.div`
   display: grid;
